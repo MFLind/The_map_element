@@ -18,10 +18,9 @@ function initMap() {
     var markers = locations.map(function(location, i) {
         return new google.maps.Marker({
             position: location,
-            label: label[i % labels.length]
+            label: labels[i % labels.length]
         });
     });
 
-    var markerCluster = new markerCluster(map, markers, 
-        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
